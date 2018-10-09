@@ -49,11 +49,10 @@ class App extends Component {
     var arr = this.state.posts; 
     arr.push({
       id: this.state.posts.length+1,
-      name: this.state.userInfo.name,
-      login: this.state.userInfo.login,
+      user: this.state.userInfo,
       text: postInfo,
-      avatar: this.state.userInfo.avatar,
-      likesCount: 0
+      likesCount: 0,
+      comments: []
     });
     this.setState({arr});
   }

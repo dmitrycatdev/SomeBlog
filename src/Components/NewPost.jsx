@@ -21,11 +21,17 @@ export class NewPost extends React.Component {
     }
 
     render() {
+        var self = this;
         return (
         <div className="container" style={{padding: '30px 10%'}}>
             <div className="field">
                 <div className="control">
                     <textarea 
+                        onKeyPress={(e) => {
+                            if(e.charCode==13) {
+                                this.addNewPost()
+                            }
+                        }}
                         onChange={(e) => {
                             this.setState({ inputText: e.target.value })
                         }}
